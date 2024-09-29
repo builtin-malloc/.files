@@ -1,0 +1,14 @@
+*
+!*/
+
+.local/
+Documents/
+Source/
+
+!.emacs.d/init.el
+
+!.gitignore
+!.gitconfig
+
+!.bashrc
+!.zshrc
