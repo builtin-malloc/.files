@@ -51,3 +51,15 @@ fi
 if [[ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
   source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
+
+eval "$(zoxide init zsh)"
+
+################################################################################
+## ALIASES #####################################################################
+################################################################################
+
+alias ls='eza --color=auto --group-directories-first'
+alias cat='batcat --paging=never'
+alias grep='rg'
+alias top='btop'
+alias cd='z'
