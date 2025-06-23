@@ -15,6 +15,8 @@ sudo apt install eza bat ripgrep btop zoxide
 sudo apt install zsh-syntax-highlighting zsh-autosuggestions
 chsh -s $(which zsh)
 
+git clone https://github.com/folke/lazy.nvim.git ~/.local/share/nvim/lazy/lazy.nvim
+
 git clone git@github.com:builtin-malloc/.files.git Repos/Dotfiles
 cd Repos/Dotfiles
 make install
