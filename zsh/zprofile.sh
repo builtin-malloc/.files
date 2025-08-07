@@ -1,4 +1,7 @@
-export PATH="$HOME/Programs:$HOME/.local/bin:$HOME/VirtualEnvs/Global/bin:$PATH"
+export PATH="/snap/bin:$PATH"
+export PATH="$HOME/Programs/lua-language-server/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/VirtualEnvs/Global/bin:$PATH"
 
 export EDITOR=nvim
 export VISUAL=nvim
