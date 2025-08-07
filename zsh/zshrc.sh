@@ -18,23 +18,29 @@ bindkey '^R' history-incremental-search-backward
 ## PROMPT ######################################################################
 ################################################################################
 
-function set_prompt() {
-  local EXIT_STATUS=$?
-  local GIT_BRANCH=""
-  
-  if command -v git >/dev/null 2>&1; then
-    GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
-    [[ -n "$GIT_BRANCH" ]] && GIT_BRANCH="---( git:${GIT_BRANCH} )---"
-  fi
+ICON_FOLDER=""
+ICON_COMPUTER="󱩛"
+ICON_GIT=""
 
-  echo
-
-  PROMPT="---( %n )--- ---( %~ )--- ---( $EXIT_STATUS )--- $GIT_BRANCH"$'\n''%# '
+function git_branch {
+  local branch
+  branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+  [[ -n "$branch" ]] && echo "$ICON_GIT: $branch"
 }
 
-if ! [[ " ${precmd_functions[@]} " =~ " set_prompt " ]]; then
-  precmd_functions+=(set_prompt)
-fi
+function precmd {
+  local exit_code=$?
+
+  PROMPT=$'\n'
+  PROMPT+="---( $ICON_FOLDER  %~ )--- "
+  PROMPT+="---( $ICON_COMPUTER  %n@%m )--- "
+
+  local branch=$(git_branch)
+  [[ -n "$branch" ]] && PROMPT+="---( $branch )--- "
+
+  PROMPT+="---( $exit_code )---"$'\n'
+  PROMPT+='$ '
+}
 
 ################################################################################
 ## COMPLETIONS #################################################################
