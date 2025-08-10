@@ -1,4 +1,5 @@
 export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/opt/llvm@19/bin:$PATH"
 export PATH="/snap/bin:$PATH"
 export PATH="$HOME/Programs/lua-language-server/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"

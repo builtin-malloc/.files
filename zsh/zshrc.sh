@@ -76,3 +76,6 @@ alias cd='z'
 
 export TERM=xterm-256color
 export COLORTERM=truecolor
+
+export LDFLAGS="-L/opt/homebrew/opt/llvm@19/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm@19/include"

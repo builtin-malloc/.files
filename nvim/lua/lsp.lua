@@ -17,7 +17,7 @@ local lspconfig = require("lspconfig")
 
 local servers = {
     clangd = {
-        cmd = { "clangd-19" }
+        cmd = { "clangd" }
     },
     pyright = {},
     hls = {},
@@ -37,6 +37,18 @@ local servers = {
             },
         },
     },
+    emmet_ls = {
+        filetypes = {
+            "html", "css", "scss", "javascriptreact", "typescriptreact", "vue", "svelte"
+        },
+        init_options = {
+            html = {
+                options = {
+                    ["output.selfClosingStyle"] = "xhtml"
+                }
+            }
+        }
+    }
 }
 
 for server, config in pairs(servers) do
